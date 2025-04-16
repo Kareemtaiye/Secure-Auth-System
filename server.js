@@ -2,9 +2,12 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 
 const app = require("./app");
+const connectDB = require("./database/db");
 
-const PORT = process.env.PORT;
+const { PORT, NODE_ENV } = process.env;
 
-app.listen("127.0.0.1", PORT, () => {
+connectDB();
+
+app.listen(PORT, "127.0.0.1", () => {
   console.log(`Server running at port ${PORT}`);
 });
