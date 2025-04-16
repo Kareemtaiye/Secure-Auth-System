@@ -35,8 +35,19 @@ const userSchema = mongoose.Schema({
       message: "Password and password confirm are not the same",
     },
   },
+
+  role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user",
+  },
+
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("user", userSchema);
 
 module.exports = User;

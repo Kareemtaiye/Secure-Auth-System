@@ -1,5 +1,5 @@
-const catAsyncError = fn => {
-    return fn(req, res, next) = () => {
-
-    }
-}
+module.exports = fn => {
+  return (req, res, next) => {
+    fn(req, res, next).catch(next);
+  };
+};
