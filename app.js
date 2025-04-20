@@ -10,6 +10,10 @@ app.use(express.json());
 
 app.use("/api/v1/auth", authRouter);
 
+// app.use((err, req, res, next) => {
+//     res.status()
+// })
+
 // app.use("*", (req, res, next) => {
 //   res.status(404).json({
 //     status: "fail",
